@@ -453,6 +453,25 @@ function App() {
         )}
       </main>
 
+      <footer className="contact-footer container reveal" aria-labelledby="contato-final">
+        <p className="contact-kicker">Contato</p>
+        <h2 id="contato-final">Entre em contato</h2>
+        <p className="contact-text">
+          Se você procura alguém para desenvolver soluções web, desktop ou designs,
+          estou disponível para novos trabalhos.
+        </p>
+
+        <nav className="contact-actions" aria-label="Canais de contato">
+          <a href={`mailto:${perfil.email}`}>Enviar e-mail</a>
+          <a href={perfil.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href={perfil.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+        </nav>
+      </footer>
+
       {arteExpandida ? (
         <div
           className="lightbox"
