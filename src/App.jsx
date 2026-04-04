@@ -12,9 +12,9 @@ const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 function obterRotaAtual() {
-  const hash = window.location.hash.replace('#', '').trim();
-  if (ROTAS_VALIDAS.includes(hash)) {
-    return hash;
+  const caminho = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (ROTAS_VALIDAS.includes(caminho)) {
+    return caminho;
   }
   return '/desenvolvimento';
 }
@@ -31,7 +31,9 @@ function App() {
 
   const navegar = (rota) => {
     if (rota !== rotaAtual) {
-      window.location.hash = rota;
+      window.history.pushState({}, '', rota);
+      setRotaAtual(rota);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -56,17 +58,24 @@ function App() {
   };
 
   useEffect(() => {
-    if (!window.location.hash) {
-      window.location.hash = '/desenvolvimento';
+    const rotaLegada = window.location.hash.replace('#', '').trim();
+    if (ROTAS_VALIDAS.includes(rotaLegada)) {
+      window.history.replaceState({}, '', rotaLegada);
     }
 
-    const aoMudarHash = () => {
+    const rotaInicial = obterRotaAtual();
+    if (window.location.pathname !== rotaInicial) {
+      window.history.replaceState({}, '', rotaInicial);
+    }
+    setRotaAtual(rotaInicial);
+
+    const aoMudarRota = () => {
       setRotaAtual(obterRotaAtual());
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    window.addEventListener('hashchange', aoMudarHash);
-    return () => window.removeEventListener('hashchange', aoMudarHash);
+    window.addEventListener('popstate', aoMudarRota);
+    return () => window.removeEventListener('popstate', aoMudarRota);
   }, []);
 
   useEffect(() => {
