@@ -1,0 +1,41 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050812" />
+      <stop offset="0.52" stop-color="#070C1A" />
+      <stop offset="1" stop-color="#04070F" />
+    </linearGradient>
+    <radialGradient id="a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(200 120) rotate(31.2) scale(280 180)">
+      <stop stop-color="#66B6FF" stop-opacity="0.25" />
+      <stop offset="1" stop-color="#66B6FF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1040 0) rotate(115.3) scale(260 200)">
+      <stop stop-color="#8679FF" stop-opacity="0.3" />
+      <stop offset="1" stop-color="#8679FF" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="stroke" x1="280" y1="180" x2="860" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#66B6FF" />
+      <stop offset="1" stop-color="#8679FF" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#a)" />
+  <rect width="1200" height="630" fill="url(#b)" />
+
+  <rect x="180" y="130" width="840" height="370" rx="24" fill="#0A1225" fill-opacity="0.65" />
+  <rect x="180.75" y="130.75" width="838.5" height="368.5" rx="23.25" stroke="#9FCBFF" stroke-opacity="0.18" stroke-width="1.5" />
+
+  <path d="M236 180H270V214" stroke="url(#stroke)" stroke-opacity="0.8" stroke-width="2" />
+  <path d="M964 450H930V416" stroke="url(#stroke)" stroke-opacity="0.8" stroke-width="2" />
+
+  <text x="240" y="262" fill="#E4EBFF" font-family="Space Grotesk, Arial, sans-serif" font-size="56" font-weight="700">
+    Daniel Holanda
+  </text>
+  <text x="240" y="318" fill="#C8D5F4" font-family="Instrument Sans, Arial, sans-serif" font-size="30" font-weight="500">
+    Desenvolvimento Web, Desktop e Design Gráfico
+  </text>
+  <text x="240" y="382" fill="#9FB2DD" font-family="Instrument Sans, Arial, sans-serif" font-size="24">
+    Portfólio profissional
+  </text>
+</svg>
