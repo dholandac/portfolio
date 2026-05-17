@@ -47,41 +47,6 @@ body {
   margin-inline: auto;
 }
 
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  padding-top: 0.9rem;
-  padding-bottom: 0.5rem;
-  backdrop-filter: blur(8px);
-}
-
-.topbar-nav {
-  display: flex;
-  justify-content: center;
-  gap: 0.55rem;
-}
-
-.topbar-nav button {
-  border: 0;
-  background: transparent;
-  color: #b9c8ee;
-  padding: 0.48rem 0.2rem 0.62rem;
-  border-radius: 0;
-  font-size: 0.92rem;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-}
-
-.topbar-nav button:hover {
-  color: #e4ecff;
-}
-
-.topbar-nav button.active {
-  color: #e6efff;
-  border-bottom-color: var(--blue);
-}
-
 .hero {
   padding-top: clamp(1.6rem, 4vw, 2.8rem);
   padding-bottom: 2rem;

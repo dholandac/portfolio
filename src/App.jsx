@@ -29,14 +29,6 @@ function App() {
   const totalSlides = galeriaDesign.length;
   const slideAtivo = useMemo(() => galeriaDesign[slideAtual], [slideAtual]);
 
-  const navegar = (rota) => {
-    if (rota !== rotaAtual) {
-      window.history.pushState({}, '', rota);
-      setRotaAtual(rota);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
   const irParaAnterior = useCallback(() => {
     setSlideAtual((valorAtual) =>
       valorAtual === 0 ? totalSlides - 1 : valorAtual - 1
@@ -184,27 +176,6 @@ function App() {
   return (
     <div className="page">
       <div className="noise" />
-
-      <header className="topbar">
-        <nav className="topbar-nav container" aria-label="Seções do portfólio">
-          <button
-            type="button"
-            aria-current={rotaAtual === '/desenvolvimento' ? 'page' : undefined}
-            className={rotaAtual === '/desenvolvimento' ? 'active' : ''}
-            onClick={() => navegar('/desenvolvimento')}
-          >
-            Desenvolvimento
-          </button>
-          <button
-            type="button"
-            aria-current={rotaAtual === '/design' ? 'page' : undefined}
-            className={rotaAtual === '/design' ? 'active' : ''}
-            onClick={() => navegar('/design')}
-          >
-            Design
-          </button>
-        </nav>
-      </header>
 
       <section className="hero container reveal">
         <p className="kicker">Portfólio</p>
